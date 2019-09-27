@@ -8,4 +8,9 @@ var GenreSchema = new Schema(
     );
 
 //Virtual method for URL
+GenreSchema
+.virtual('url')
+.get(function(){
+    return `/catalog/genre/${this.id}`;
+});
 module.exports = mongoose.model('Genre', GenreSchema);
