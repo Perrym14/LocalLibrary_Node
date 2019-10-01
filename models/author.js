@@ -22,8 +22,8 @@ AuthorSchema
 //Virtual method for author's lifespan.
 AuthorSchema
 .virtual('lifespan')
-.get(function(){
-    return `${(this.date_of_death.getYear() - this.date_of_birth.getYear()).toString}`;
+.get(function () {
+  return `${this.date_of_death.getYear()} - ${this.date_of_birth.getYear()}`;
 });
 
 //Virtual for author's URL.
